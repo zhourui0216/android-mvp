@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'org.greenrobot.greendao' // apply plugin
 }
 
 android {
@@ -26,6 +27,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    greendao {
+        schemaVersion 1 //数据库版本号，数据库升级使用
+        daoPackage 'com.example.mvp.db' //代表GreenDao自动生成的有关数据库操作工具类所要存放的包名
+        targetGenDir 'src/main/java' //路径
+    }
 }
 
 dependencies {
@@ -47,4 +53,5 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.0'
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation 'org.greenrobot:greendao:3.3.0' // add library
 }
