@@ -1,5 +1,7 @@
 package com.example.mvp.base;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -74,5 +76,17 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(R.anim.in_from_left, R.anim.out_to_right);
+    }
+
+    /**
+     * 切换页面
+     *
+     * @param context Context
+     * @param cl      Class
+     */
+    public void switchPages(Context context, Class cl) {
+        Intent intent = new Intent(context, cl);
+        startActivity(intent);
+        overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
     }
 }
