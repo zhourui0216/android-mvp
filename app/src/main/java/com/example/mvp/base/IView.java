@@ -7,7 +7,7 @@ public interface IView {
     void showLoading();
 
     /**
-     * 显示加载框
+     * 隐藏加载框
      */
     void dismissLoading();
 

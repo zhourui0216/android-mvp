@@ -8,7 +8,7 @@ public interface MainContract {
     interface view extends IView {
     }
 
-    interface presenter extends IView {
+    interface presenter {
 
     }
 
