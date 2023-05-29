@@ -15,12 +15,11 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        setTheme(R.style.Theme_Mvp);
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
 
-        initView();
         initPresenter();
+        initView();
     }
 
     @Override
