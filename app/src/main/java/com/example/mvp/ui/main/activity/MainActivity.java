@@ -11,9 +11,14 @@ import com.example.mvp.ui.main.contract.MainContract;
 import com.example.mvp.ui.main.presenter.MainPresenter;
 import com.example.mvp.utils.LogUtil;
 
+import butterknife.BindView;
+
 public class MainActivity extends BaseActivity<MainPresenter> implements MainContract.view, View.OnClickListener {
+    @BindView(R.id.button1)
     Button button1;
+    @BindView(R.id.content1)
     TextView content1;
+    @BindView(R.id.loading)
     ProgressBar loading;
 
     @Override
@@ -28,9 +33,6 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
 
     @Override
     protected void initView() {
-        button1 = findViewById(R.id.button1);
-        content1 = findViewById(R.id.content1);
-        loading = findViewById(R.id.loading);
         button1.setOnClickListener(this);
         mPresenter.getData();
     }

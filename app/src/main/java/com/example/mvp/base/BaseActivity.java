@@ -10,14 +10,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mvp.R;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements IView {
+    protected Unbinder unbinder;
     protected P mPresenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
-
+        unbinder = ButterKnife.bind(this);
         initPresenter();
         initView();
     }
@@ -25,6 +29,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        unbinder.unbind();
         if (mPresenter != null) {
             mPresenter.detachView();
         }
