@@ -9,7 +9,7 @@ public interface IView {
     /**
      * 隐藏加载框
      */
-    void dismissLoading();
+    void hideLoading();
 
     /**
      * 网络错误

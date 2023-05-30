@@ -48,7 +48,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
     }
 
     @Override
-    public void dismissLoading() {
+    public void hideLoading() {
         Log.d("BaseMvpActivity", "dismissLoading: ");
     }
 

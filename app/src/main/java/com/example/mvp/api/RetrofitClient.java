@@ -31,8 +31,8 @@ public class RetrofitClient {
         return mInstance;
     }
 
-    public <T> T getService(Class<T> cls) {
-        return getRetrofit().create(cls);
+    public <T> T getService(Class<T> cl) {
+        return getRetrofit().create(cl);
     }
 
     private synchronized Retrofit getRetrofit() {

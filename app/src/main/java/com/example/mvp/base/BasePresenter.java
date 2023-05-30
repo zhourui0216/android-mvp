@@ -21,7 +21,6 @@ public abstract class BasePresenter<T extends IView, K extends IModel> implement
             weakReference = null;
         }
         if (mModel != null) {
-            mModel.unSubscribe();
             mModel = null;
         }
     }
@@ -43,7 +42,7 @@ public abstract class BasePresenter<T extends IView, K extends IModel> implement
 
     protected void dismissLoading() {
         if (weakReference != null) {
-            getView().dismissLoading();
+            getView().hideLoading();
         }
     }
 

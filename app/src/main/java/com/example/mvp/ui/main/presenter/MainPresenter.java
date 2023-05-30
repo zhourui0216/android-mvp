@@ -53,13 +53,13 @@ public class MainPresenter extends BasePresenter<MainContract.view, MainContract
                     public void onError(Throwable e) {
                         LogUtil.d(e.toString());
                         getView().getFile(e);
-                        getView().dismissLoading();
+                        getView().hideLoading();
                     }
 
                     @Override
                     public void onNext(Data data) {
                         getView().getSuccess(data.toString());
-                        getView().dismissLoading();
+                        getView().hideLoading();
                     }
                 });
     }

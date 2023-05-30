@@ -58,7 +58,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
     }
 
     @Override
-    public void dismissLoading() {
+    public void hideLoading() {
         loading.setVisibility(View.GONE);
     }
 
